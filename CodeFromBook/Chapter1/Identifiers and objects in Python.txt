@@ -1,0 +1,65 @@
+Identifiers in Python
+
+- Are case-sensitive.
+- Can be composed of almost any combination of letters, numerals, and underscore characters.
+- Cannot begin with a numeral.
+- Cannot be any of python reserved words
+
+
+The bool Class
+It is used to manipulate boolean values
+- only two instances of the class are expressed as literals i.e True or False.
+- python allows the creation of a Boolean value from a nonboolean type using the syntax bool(x) for value x.
+- Numbers evaluate to False if zero and True if non-zero.
+- Sequences and other container types evaluate to False if empty and True if nonempty.
+
+
+The int Class
+The *int* class is designed to represent integer values with arbitrary magnitude.
+- In cases where it is convenient to express an integral value using binary, octal or hex, it can be done by using a prefix of the number 0 and then a character to describe the base.
+	* Example
+	  - 0x7f = 127
+	  - 0o52 = 52
+	  - 0b1011 = 11
+- the constructor, int() returns value 0 by default
+- int() can be used to construct an integer based upon an existing value of another type.
+- integers passed as strings will be converted to the corresponding integer but string arguments like ('Hello') will raise a ValueError.
+- if conversion to another base is required, the destination base is passed as a second argument.
+
+
+The Float Class
+- It is the sole floating-point type in python. its precision is alike to the double in C++ and Java.
+- One can also use scientific notation to represent floating point values. For example 6.022e23 represents the value 6.022 x10^23.
+- The constructor, float() returns 0.0 and when given a parameter, it attempts to return the equivalent floating-point value. For example, float(2) returns 2.0.
+
+
+The list class
+- A list instance stores a sequence of objects (arbitrary objects including the None object)
+- It is akin to an "array" in other languages.
+- Lists are array-based sequences and are zero-indexed => a list of length n has elements from 0 to n-1 inclusive.
+- Python uses the [] characters to delimit lists
+- [] represents an empty list
+- The constructor, list() returns an empty list by default and accepts any parameter of an iterable type (e.g. strings, list, tuples, sets, dictionaries)
+- Lists are mutable (content can be changed)
+
+
+The tuple class
+- Provides an immutable version of a sequence.
+- Python uses () characters to delimit a tuple.
+- 
+
+
+The string class
+- Python does not have a separate class for characters; they are just a strings of length one.
+- Designed to represent an immutable sequence of characters.
+- They can be enclosed in single 'hello' or double quotes "hello"
+- For sequences of characters including the quote character, the escape character, '\' (backslash).
+	* For example, to represent the sequence of characters, C:\User\Python, one will use the string literal, 'C:\\User\\Python' in python.
+	* For the sequence, Don't worry, one will use, "Don't worry".
+- Python also supports using the ''' and """ to denote the beginning and end of multiline text.
+
+
+
+The set class
+- Represent a collection of elements without duplicates and without a specific order to those elements.
+
