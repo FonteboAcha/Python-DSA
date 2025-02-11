@@ -144,10 +144,50 @@ Control flow
                 open_door()
             advance()
         Noticing the indentation level of the last statement, implies that it will always be executed meaning the robot only moves through an open door.
-        another example
+        another example with nesting involved
             if door_is_closed:
                 if door_is_locked:
                     unlock_door()
                 open_door()
             advance()
+    Loops
+        while loops
+            structure
+                while condition: (boolean expression)
+                    body (block of code)
+            Example
+                j = 0
+                while j < len(data) and data[j] != 'X':
+                    j += 1
+
+        For loops
+            can be used on any kind of iterable structure.
+            Structure
+                for element in iterable:
+                    body        in body, we may refer to "element" as an identifier
+
+                Example1: summing elements of a list
+                    total = 0
+                    for val in data:
+                        total += val
+                2: finding max element in list
+                    biggest = data[0]
+                    for val in data:
+                        if val > biggest:
+                            biggest = val
+                3: finding position of max element ( iteration using indices instead of going through the elements themselves )
+                    big_index = 0
+                    for i in range(len(data)):
+                        if data[i] > data[big_index]:
+                            big_index = i
+
+        Break and Continue statments
+            - break is used to immediately terminate the immediately enclosing loop.
+            break Example:
+                found = False
+                for item in data:
+                    if item == target:
+                        found = True
+                        break       #causes immediate exit of the for loop
+            - Continue is used to stop the current iteration but the subsequent iterations go as expected.
 
