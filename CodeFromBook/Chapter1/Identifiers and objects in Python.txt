@@ -62,4 +62,92 @@ The string class
 
 The set class
 - Represent a collection of elements without duplicates and without a specific order to those elements.
+- Two important restrictions to note:
+    * a set does not maintain the elements in a specific order.
+        For example:
+        The code
+
+            names = {"Achah", "John", "Doe"}
+            print(names[0])
+
+        when run produces an error
+            print(names[0])
+                  ~~~~~^^^
+        TypeError: 'set' object is not subscriptable
+
+    * only instances of immutable types can be added to a set in Python.
+        For example
+        The code
+            names = {"Achah", ["John", "Doe"]}
+
+        Produces the error
+            names = {"Achah", ["John", "Doe"]}
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        TypeError: unhashable type: 'list'
+
+The dict class
+- used to represent a mapping from a set of distinct keys to associated values.
+- dictionaries were introduced to python prior to sets, consequently, the literal form {}
+produces an empty dictionary not set.
+- a non-empty dictionary is expressed using a  comma-separated series of key:value pairs.
+- For example:
+    {"la": "French", "the": "English"}
+
+- a dictionary can be created from an exiting mapping or a sequence of key:value pairs using the dict() constructor.
+
+
+Operators in Python
+logical operators
+    - not: negation
+    - and: conditional and
+    - or: conditional or
+
+ equality operators
+    - is: same identity (when identifiers are aliases for the same object)
+    - is not: different
+    - == : equivalent
+    - != : not equivalent
+
+ arithmetic operators
+    - addition ( + )
+    - subtraction ( - )
+    - multiplication ( * )
+    - division: ( / )
+    - integer division: ( // )
+ sequence operators
+    - s[j] : indicates element in s sequence at index j
+    - s[start:stop] : slice sequence s including start and stop indicators
+    - s+t : concatenation of s and t sequences
+    - k*s : short for s + s + s + ... (k times)
+    - val in s: Containment check
+    - val not in s : non containment check
+
+    NB: Python uses zero-indexing and supports negative indexing
+    
+Control flow
+    - Colon " : " character is used to delimit the beginning of a block of code
+      that acts as a body for a control structure.
+      NB: if the body can be stated in a singe statement, then it can be places to the right of the colon
+      otherwise, indentation is used to designate the extent of the block of code or any nested blocks within it
+
+    Conditionals (if statements): execute a block of code based on the run-time evaluation of a boolean expression
+        Structure:
+            if first_condition:
+                first_body
+            elif second_condition:
+                second_body
+            else:
+                third_body
+        Only one of the bodies of code is executed based on which condition is satisfied
+        Example: robot instruction
+            if door_is_closed:
+                open_door()
+            advance()
+        Noticing the indentation level of the last statement, implies that it will always be executed meaning the robot only moves through an open door.
+        another example
+            if door_is_closed:
+                if door_is_locked:
+                    unlock_door()
+                open_door()
+            advance()
 
