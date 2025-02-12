@@ -191,3 +191,24 @@ Control flow
                         break       #causes immediate exit of the for loop
             - Continue is used to stop the current iteration but the subsequent iterations go as expected.
 
+Functions
+    Difference between function and method (copied)
+        The term 'function' will be used to describe a traditional, stateless function invoked without the context of a particular class
+        or an instance of that class for example max(data), sum(data) whereas the term method is used to describe a member function invoked upon
+        specific object using an object-oriented message passing syntax e.g. data.sort().
+    example:
+        def count(data, target):
+            n = 0
+            for item in data:
+                if item = target:
+                    n += 1
+            return n
+    first line beginning with "def" defines the function's signature together with the number and names of parameters it expects.
+    unlike C++ or Java, the types of the parameters or return are not predefined but can be enforced in the body of the function ( Python is dynamically typed)
+    after the definition, then the body; it is expressed as the indented block of code.
+    NB: When a function is called, python creates an activation record which stores information relevant to the current call. some of the info includes
+    the namespace which tracks and manages all identifiers within the local scope of the  current call.
+    - The "return" statement is used within the body of the function to tell the function to cease executution immediately and
+      return a specified value to the caller. if no value is specified to be returned, the function returns None, same as when the function ceases execution without
+      the return statement.
+
