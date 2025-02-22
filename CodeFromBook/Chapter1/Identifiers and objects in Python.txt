@@ -181,7 +181,7 @@ Control flow
                         if data[i] > data[big_index]:
                             big_index = i
 
-        Break and Continue statments
+        Break and Continue statements
             - break is used to immediately terminate the immediately enclosing loop.
             break Example:
                 found = False
@@ -208,7 +208,33 @@ Functions
     after the definition, then the body; it is expressed as the indented block of code.
     NB: When a function is called, python creates an activation record which stores information relevant to the current call. some of the info includes
     the namespace which tracks and manages all identifiers within the local scope of the  current call.
-    - The "return" statement is used within the body of the function to tell the function to cease executution immediately and
+    - The "return" statement is used within the body of the function to tell the function to cease execution immediately and
       return a specified value to the caller. if no value is specified to be returned, the function returns None, same as when the function ceases execution without
       the return statement.
+
+      Example
+
+      def contains(data, target):
+        for item in data:
+            if item == target:
+                return True
+        return False
+
+      if the conditional within the for loop is satisfied, the return True statement is executed and the function ceases execution at that point
+      but if the loop goes to completion without the conditional being ever satisfied, then the return False statement is executed, ending the function execution.
+
+    - In a function definition, the identifiers used to describe the expected parameters are called formal parameters whereas the values passed upon invocation of the function
+      are called the actual parameters. just before execution of the function call, the actual parameters are assigned to the formal parameters
+
+    Default parameter values
+        Example
+            def foo(a, b=15, c=27):
+
+            different ways of calling the function foo:
+                foo(4) which will be equivalent of calling the function as foo(4,15,27)
+                foo(5, 25) === foo(5, 15, 27)
+
+            however, it is not permitted to define a function for example count(a, b=2, c)
+            this is because once a parameter has a default value, all following parameters must have default values
+
 
