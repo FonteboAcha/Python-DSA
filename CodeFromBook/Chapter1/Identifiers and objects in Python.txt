@@ -237,4 +237,75 @@ Functions
             however, it is not permitted to define a function for example count(a, b=2, c)
             this is because once a parameter has a default value, all following parameters must have default values
 
+Simple Input and Output
+
+    Console input and output
+        The print function
+            - used to generate standard output to the console
+            - prints a sequence of arguments separated by spaces.
+            NB:
+                - by default, arguments to the print function are separated with a space but a new attribute separator
+                  can be defined by the user using the keyword argument 'sep'
+                  For example, to produce colon-separated output, one could use
+
+                    print(name, amount, sep=':')
+                - by default, a trailing new line is printed after all arguments. this can be suppressed by using
+                    the 'end' keyword argument
+                    for example: print(names, ages, end=''
+                - by default, the print function sends its output the the console. However, the output could be directed
+                  to a file.
+
+        The input function
+            It is the primary way of receiving information from the user console.
+            - The function displays a prompt which can be specified as an optional parameter and then waits until the user enters
+              their data and pressed the 'enter'/'return' key on the keyboard.
+            - the function returns a string of characters that were entered
+
+            Since the input function returns a string, in order to get integer values, from users, we must construct the integer or float
+            from the entered data. these functions can be combined in one statement as:
+
+            age = int(input('How old are you?'))
+
+            Example program
+
+                age = int(input("Enter your age in years: "))
+                max_heart_rate = 206.9 - (0.67 * age)
+                target = 0.65 * max_heart_rate
+                print('Your target fat-burning heart rate is', target)
+
+    Files
+        - Access to a file in the beginning is made using the built-in function called open.
+        - modes are optional parameters used in the function call that specify what can be done with the file.
+          with 'r' being the default mode for 'read-only'.
+          Other modes include 'w' for write/writing, 'a' for append
+
+        the command fp = open('sample.txt') attempts to open a file named sample.txt in read-only mode.
+        it also returns a proxy to the file.
+
+        summary of methods for reading and writing from and to files
+        fp = open(sample.txt)
+        1. fp.read() : Return the (remaining) content of a readable file as a string.
+        2. fp.read(k) : Return the next k bytes of a readable file as a string
+        3. fp.readline() : Return (remainder of) the current line of a ...
+        4. fp.readlines() : Return (remaining ) lines of a readable file as a list of strings
+        5. for line in fp : iterate over remaining lines in file
+        6. fp.seek(k) : change position of cursor to the kth byte of the file.
+        7. fp.tell() : Return the current position as a byte-offset from the start
+        8. fp.write(string) : Write given string at current position of writable file.
+        9. fp.writelines(seq) : write each of the strings of the given sequence at the
+           current position of the writable file. NB the command does not insert any newlines '\n' besides those already in the strings
+        10. print(..., file=fp) : Redirect output of the print function to the file.
+
+
+        Reading from a file
+            using the read, readline or readlines functions mentioned above.
+
+        Writing to a file
+        - the file proxy must be created using with the write mode specified
+            fp = open('sample.txt', w)
+        - writing to the file can then be done using the write, writelines functions mentioned above
+         or by redirecting the output of the print function to the file.
+
+Exception Handling
+
 
