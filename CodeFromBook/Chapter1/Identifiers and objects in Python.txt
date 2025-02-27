@@ -8,8 +8,8 @@ Identifiers in Python
 
 The bool Class
 It is used to manipulate boolean values
-- only two instances of the class are expressed as literals i.e True or False.
-- python allows the creation of a Boolean value from a nonboolean type using the syntax bool(x) for value x.
+- only two instances of the class are expressed as literals i.e. True or False.
+- python allows the creation of a Boolean value from a non-boolean type using the syntax bool(x) for value x.
 - Numbers evaluate to False if zero and True if non-zero.
 - Sequences and other container types evaluate to False if empty and True if nonempty.
 
@@ -252,7 +252,7 @@ Simple Input and Output
                 - by default, a trailing new line is printed after all arguments. this can be suppressed by using
                     the 'end' keyword argument
                     for example: print(names, ages, end=''
-                - by default, the print function sends its output the the console. However, the output could be directed
+                - by default, the print function sends its output the console. However, the output could be directed
                   to a file.
 
         The input function
@@ -303,9 +303,32 @@ Simple Input and Output
         Writing to a file
         - the file proxy must be created using with the write mode specified
             fp = open('sample.txt', w)
-        - writing to the file can then be done using the write, writelines functions mentioned above
+        - writing to the file can then be done using the 'write', writelines functions mentioned above
          or by redirecting the output of the print function to the file.
 
 Exception Handling
+    What is an exception?
+        They are unexpected events that occur during the execution of a program.
+        When these errors or exceptions occur, they are either caught and handled by a surrounding context or they are uncaught
+        which cause the interpreter to report the appropriate message in the console
+    - an exception is thrown by executing the 'raise' statement, with an appropriate instance of an exception class as an argument
+      that designates the problem.
+    For Example Exception handling in the sqrt function may be done as follows:
+        def sqrt(x):
+            if not isinstance(x, (int, float)):
+                raise TypeError("x must be numeric.")
+            elif x < 0:
+                raise ValueError('x cannot be negative')
+                .
+                .
+                .
+
+    Methods of exception handling
+    1. "look before you leap": handling all possibilities of exceptions being raised proactively
+    2. "it is easier to ask for forgiveness than it is to get permission.": No need to spend time safeguarding
+       against every possible exception as long as there is a mechanism to take care of it if it arises.
+       to implement this idea, the 'try-except' block is used in python.
+
+    Exception handling comes in really handy when dealing with unpredictable data input maybe from a user or a file.
 
 
