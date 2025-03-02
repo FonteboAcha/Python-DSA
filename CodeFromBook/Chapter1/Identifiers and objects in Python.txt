@@ -330,5 +330,34 @@ Exception Handling
        to implement this idea, the 'try-except' block is used in python.
 
     Exception handling comes in really handy when dealing with unpredictable data input maybe from a user or a file.
+    NB:
+        Exceptions are objects that can be examined when caught. for example
+            try:
+                fp = open("sample.txt")
+            except IOError as e:
+                print("Unable to open the file:", e)
+
+            The name,e denotes the instance of the exception that was thrown and printing it causes a detailed error message to be displayed.
+
+    it is possible to handle multiple exceptions in one "except block", this is by using a tuple containing all the exceptions
+    For example:
+        age = -1
+        while age <= 0:
+            try:
+                age = int(input('enter your age'))
+                if age <= 0:
+                    print('Your age must be positive')
+            except (ValueError, EOFError):
+                print('Invalid response')  # takes care of the types of error we wish to catch
+
+    multiple except blocks can be used to describe different responses to different exceptions
+
+
+Iterators and Generators
+    - An iterator is an object that manages an iteration through a series of values.
+    - An iterable is an object that produces an iterator via the syntax iter(obj)
+    - StopIteration exception is raised to indicate that there are no further elements
+    
+
 
 

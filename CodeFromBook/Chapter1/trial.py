@@ -5,4 +5,8 @@
 # beta = beta + [6, 7]  # reassigns beta to a new list [1, 2, 3, 4, 5, 6, 7]
 # print(beta )
 
-
+# data = ["Achah", 2, 3, 4, 5]
+#
+# i = iter(data)    #create an iterator
+#
+# print(next(i))
