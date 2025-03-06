@@ -10,3 +10,23 @@
 # i = iter(data)    #create an iterator
 #
 # print(next(i))
+
+# Comprehensions
+# sum_squares = sum(k*k for k in range(7))
+#
+# print(sum_squares)
+
+# packing of sequences
+# data = 1, 2, 3, 4
+#
+# print(data)
+
+# unpacking of sequences
+# a, b, c, d = [1, 2, 3, 4]
+#
+# print(b, d, c, a)
+
+import random
+my_list = [num for num in range(random.randrange(0, 20))]
+
+print(my_list)

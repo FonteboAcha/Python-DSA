@@ -354,10 +354,97 @@ Exception Handling
 
 
 Iterators and Generators
-    - An iterator is an object that manages an iteration through a series of values.
-    - An iterable is an object that produces an iterator via the syntax iter(obj)
-    - StopIteration exception is raised to indicate that there are no further elements
-    
+    Iterators
+        - An iterator is an object that manages an iteration through a series of values.
+        - An iterable is an object that produces an iterator via the syntax iter(obj)
+        - StopIteration exception is raised to indicate that there are no further elements
+        Example
+        data = [1, 2, 3, 4]
+        # would be illegal to call next(data).
+        # however an iterator object can be produced using
+        i = iter(data)
+        # and now a call to next(i) will return an element of the list
+
+    Generators
+        - A more convenient way of creating iterators.
+        - They are defined in the same way as functions in python, but instead of the 'return' statement,
+         they use the 'yield' statement.
+        For example,
+            writing a function to give the factors of a number traditionally may look like
+                def factors(n):
+                    results = []
+                    for k in range(1, n+1):
+                        if n % k == 0:
+                            results.append(k)
+                    return results
+
+            implementing same thing using a generator will be as follows;
+
+                def factors(n):
+                    for k in range(1, n+1):
+                        if n % k == 0:
+                            yield k
+
+            using the 'yield' statement indicates to python that we are defining a generator rather than a traditional function.
+            NB it is illegal to combine the use of the 'yield' and 'return' statements.
+
+            if the generator is used in a program like this 'for factor in factors(100):' an instance of the generator is created and on each iteration, python executes the procedure
+            until a yield statement indicates the next value. At that point, the procedure is temporarily interrupted only to be resumed when another value is requested.
+
+            This method of evaluation, called 'lazy evaluation' is important because results are only computed on request and there is no need to store an entire series in memory
+            before using.
+
+Other Python goodies (conveniences)
+
+    Conditional expressions
+        In the form:
+            expr1 if condition else expr2
+        For example, instead of using the following construct
+            if n>=0:
+                param = n
+            else:
+                param = -n
+
+        one could use the following
+            param = n if n>=0 else -n
+
+        conditional expressions can also be used as parameters to functions
+
+    Comprehension syntax
+        Its general form:
+            [ expression for value in iterable if condition ] # the if-clause is optional
+            For example
+                In order to create a list of squares of numbers from 1 to n, using a common construct will be done as follows
+                    squares = []
+                    for k in range(1, n+1):
+                        squares.append(k*k)
+
+                using the comprehension syntax,
+                    squares = [k*k for k in range(1, n+1)]
+                Another example
+                    in computation of the sum of squares of numbers up to n
+
+                        total = sum(k*k for k in range(1, n+1))
+
+    Packing and unpacking of sequences
+        For example
+            the assignment,
+                data = 2, 3, 4, 5
+
+            results in the identifier, data, being assigned to the tuple (2, 3, 4, 5)
+            This behaviour is called 'automatic packing' and is also useful when a function returns multiple values
+            for example if the statement 'return x, y' is used in the function body, it will formally return a single object which is the tuple (x, y)
+
+        Same as packing of sequences, python can also automatically unpack sequences.
+        For example using the following syntax, one can assign a series of individual identifiers to the elements of a sequence
+
+            a, b, c, d = range(7, 11)
+            which results in the assignments, a = 7, b = 8, c = 9, d = 10
+
+            For this to be effective, the right hand side expression can be any iterable type as long as the number of variables on the left hand side is equal to the number of iterations
+
+
+
 
 
 
